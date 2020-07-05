@@ -30,6 +30,7 @@ build/
 ### VS Code ###
 .vscode/
 
-
-
+# application
 application-env.yml
+/.gradle
+/bin

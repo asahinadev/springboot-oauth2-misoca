@@ -7,7 +7,6 @@ server:
     key-alias:          "tomcat"
 
 spring:
-  profiles:  - env
   security:
     oauth2:
       client:
@@ -16,11 +15,12 @@ spring:
             provider:      "misoca"
             client-name:   "misoca"
             redirect-uri:  "{baseUrl}/login/oauth2/code/{registrationId}"
+            client-id:     "[env]"
+            client-secret: "[env]"
             authorization-grant-type:     "authorization_code"
             client-authentication-method: "basic"
             scope:
               - write
-              
         provider: 
           misoca:
             authorization-uri:   "https://app.misoca.jp/oauth2/authorize"
