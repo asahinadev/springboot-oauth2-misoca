@@ -1,13 +1,13 @@
 package com.example.spring.oauth2.misoca;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.jupiter.api.*;
+import org.springframework.boot.test.context.*;
 
 @SpringBootTest
-class ApplicationTests {
+public class ApplicationTests {
 
 	@Test
-	void contextLoads() {
+	public void contextLoads() {
 	}
 
 }

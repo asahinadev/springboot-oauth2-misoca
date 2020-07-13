@@ -1,24 +1,16 @@
 package com.example.spring.oauth2.misoca.controller;
 
-import java.util.Map;
+import java.util.*;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.security.oauth2.client.*;
+import org.springframework.util.*;
+import org.springframework.web.bind.annotation.*;
 
-import com.example.spring.oauth2.misoca.api.MisocaApi;
-import com.example.spring.oauth2.misoca.dto.Invoices;
-import com.example.spring.oauth2.misoca.dto.Invoices;
+import com.example.spring.oauth2.misoca.api.*;
+import com.example.spring.oauth2.misoca.dto.*;
 
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
+import reactor.core.publisher.*;
 
 @RestController
 @RequestMapping("/invoices")
@@ -76,6 +68,8 @@ public class InvoicesController {
 
 		api.getResponse(client, "/invoice/{id}/pdf", Map.of("id", id), MisocaApi.emptyParams())
 				.bodyToMono(Invoices.class);
+
+		return null;
 	}
 
 	/**
